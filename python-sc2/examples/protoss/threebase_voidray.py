@@ -18,7 +18,7 @@ from sc2.player import Bot, Computer
 class ThreebaseVoidrayBot(sc2.BotAI):
     async def on_step(self, iteration):
         if iteration == 0:
-            await self.chat_send("(glhf)")
+            await self.chat_send("glhf")
 
         if not self.townhalls.ready:
             # Attack with all workers if we don't have any nexuses left, attack-move on enemy spawn (doesn't work on 4 player map) so that probes auto attack on the way

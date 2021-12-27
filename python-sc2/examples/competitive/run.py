@@ -18,4 +18,4 @@ if __name__ == "__main__":
     else:
         # Local game
         print("Starting local game...")
-        sc2.run_game(sc2.maps.get("Abyssal Reef LE"), [bot, Computer(Race.Protoss, Difficulty.VeryHard)], realtime=True)
+        sc2.run_game(sc2.maps.get("Abyssal Reef LE"), [bot, Computer(Race.Protoss, Difficulty.Hard)], realtime=False)

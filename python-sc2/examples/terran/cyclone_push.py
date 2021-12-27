@@ -45,6 +45,19 @@ class CyclonePush(sc2.BotAI):
             cc: Unit = CCs.first
 
         # Every 50 iterations (here: every 50*8 = 400 frames)
+        if iteration % 50 == 0 and self.units(UnitTypeId.CYCLONE).amount > 6:
+            target: Point2 = self.select_target()
+            forces: Units = self.units(UnitTypeId.CYCLONE)
+            # Every 4000 frames: send all forces to attack-move the target position
+            if iteration % 500 == 0:
+                for unit in forces:
+                    unit.attack(target)
+            # Every 400 frames: only send idle forces to attack the target position
+            else:
+                for unit in forces.idle:
+                    unit.attack(target)
+
+        # Every 50 iterations (here: every 50*8 = 400 frames)
         if iteration % 50 == 0 and self.units(UnitTypeId.CYCLONE).amount > 2:
             target: Point2 = self.select_target()
             forces: Units = self.units(UnitTypeId.CYCLONE)

@@ -76,16 +76,16 @@ def parse_arguments():
 
     # Local play arguments
     parser.add_argument("--Sc2Version", type=str, help="The version of Starcraft 2 to load.")
-    parser.add_argument("--ComputerRace", type=str, default="Terran",
+    parser.add_argument("--ComputerRace", type=str, default="Random",
                         help="Computer race. One of [Terran, Zerg, Protoss, Random]. Default is Terran. Only for local play.")
     parser.add_argument("--ComputerDifficulty", type=str, default="VeryHard",
                         help=f"Computer difficulty. One of [VeryEasy, Easy, Medium, MediumHard, Hard, Harder, VeryHard, CheatVision, CheatMoney, CheatInsane]. Default is VeryEasy. Only for local play.")
-    parser.add_argument("--Map", type=str, default="Simple64",
+    parser.add_argument("--Map", type=str, default="AcropolisLE",
                         help="The name of the map to use. Default is Simple64. Only for local play.")
 
     # Both Ladder and Local play arguments
     parser.add_argument("--OpponentId", type=str, help="A unique value identifying opponent.")
-    parser.add_argument("--Realtime", action='store_true', help="Whether to use realtime mode. Default is false.")
+    parser.add_argument("--Realtime", action='store_false', help="Whether to use realtime mode. Default is false.")
 
     args, unknown_args = parser.parse_known_args()
 
